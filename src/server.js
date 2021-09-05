@@ -17,11 +17,16 @@ const wss = new WebSocket.Server({ server });
 
 wss.on("connection", (socket) => {
     console.log("Connected to Browser ✅");
-    socket.on("close", () => console.log("Disconnected from the Browser"))
-    socket.on("message", (message) => {
-        console.log(message);
-    });
+    socket.on("close", onSocketClose);
+    socket.on("message", onSocketMessage);
     socket.send("hello!!!");
 });
+
+function onSocketClose () {
+    console.log("Disconnected from the Browser ❌");
+}
+function onSocketMessage (message) {
+    console.log(message);
+}
 
 server.listen(3000, handleListen);
