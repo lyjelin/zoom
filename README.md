@@ -6,12 +6,6 @@ Zoom Clone using NodeJS, WebRTC and Websockets.
 
 ### Socket.io Error Problem
 
-1. Download `npm` the NodeJS Package Manager
-2. Install `npm`
-3. Enter `npm i socket.io`
-4. To Update `npm update socket.io`
-5. To check current version `npm list socket.io`
-
 ```
 elin@Elin zoom % npm run dev
 
@@ -29,3 +23,10 @@ internal/modules/cjs/loader.js:892
 
 Error: Cannot find module 'socket.io'
 ```
+
+1. Download `npm` the NodeJS Package Manager
+2. Install `npm`
+3. Enter `npm i socket.io`
+4. To Update `npm update socket.io`
+5. To check current version `npm list socket.io`
+
