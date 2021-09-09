@@ -2,6 +2,9 @@
 
 Zoom Clone using NodeJS, WebRTC and Websockets.
 
+1. Create connection between Server and Client(s)
+2. Create Room
+
 ---
 
 ### Socket.io Error Problem
