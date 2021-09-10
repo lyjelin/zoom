@@ -20,9 +20,7 @@ wsServer.on("connection", (socket) => {
     socket.on("enter_room", (msg, done) => {
        socket.join(roomName);
        done();
-       setTimeout(() => {
-           done("Hello from Backend!");
-       }, 15000);
+       socket.to(roomName).emit("Welcome!");
     });
 });
 
