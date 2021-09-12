@@ -6,6 +6,8 @@ const room = document.getElementById("room");
 
 room.hidden = true;
 
+let roomName;
+
 function addMessage(message){
     const ul = room.querySelector("ul");
     const li = document.createElement("li");
@@ -42,8 +44,8 @@ function showRoom() {
 function handleRoomSubmit(event){
     event.preventDefault();
     const input = form.querySelector("input");
-    socket.emit("room", {payload: input.value, showRoom});
-    rootName = input.value;
+    socket.emit("enter_room", {payload: input.value, showRoom});
+    roomName = input.value;
     input.value = "";
 }
 
@@ -58,3 +60,14 @@ socket.on("bye", (left) => {
 });
 
 socket.on("new_message", addMessage);
+
+socket.on("room_change", (rooms) => {
+    if(rooms.length === 0){
+        return;
+    }
+    const roomList = welcome.querySelector("ul");
+    rooms.forEach(room => {
+        const li = document .createElement("li");
+        li.innerText = room;
+    })
+});
