@@ -33,3 +33,6 @@ Error: Cannot find module 'socket.io'
 4. To Update `npm update socket.io`
 5. To check current version `npm list socket.io`
 
+### Camera Access Issue
+
+<img src="src/img/cameraAccessRequest.png" alt="Camera Access Request" width="40%">
